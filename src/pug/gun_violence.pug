@@ -1,0 +1,16 @@
+extends base.pug
+
+//- This adds extra styles and js to already defined in base.pug
+append main_vars
+  - css_main.push.apply(css_main, ["css/gun_violence.css"])
+  - js_main.push.apply(js_main, ["js/gun_violence.js", "js/gun_map.js", "https://cdn.plot.ly/plotly-latest.min.js", "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"])
+  
+block content
+    .gun__main
+        .map__wrapper
+            .map__container
+                .map__header
+                    h1 Gun Violence in the US
+                .map__body
+                    #map
+    

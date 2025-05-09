@@ -1,0 +1,114 @@
+$color-hover: #909090;
+$color-main: #f4f4f4;
+
+$color-background: black;
+$color-header: #212121;
+
+$font-stack: 'Didot', sans-serif;
+$font-size-base: 16px;
+$font-size-25: 2.5rem;
+$font-size-20: 2rem;
+$font-size-175: 1.75rem;
+$font-size-15: 1.5rem;
+$font-size-135: 1.35rem;
+$font-size-125: 1.25rem;
+$font-size-10: 1rem;
+$font-size-075: 0.75rem;
+
+$header-height: 100px;
+$header-height-sm: 70px;
+
+// DESCRIPTION PART
+.desc__container {
+    display: flex;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: $color-background;
+}
+
+.desc__wrapper {
+    margin-bottom: 20px;
+}
+
+.desc__title h1 {
+    font-size: 2.5rem;
+    color: $color-main;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.desc__main_text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.desc__step1 h2,
+.desc__step2 h2,
+.desc__summary h2,
+.desc__notes h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: $color-main;
+}
+
+ol#desc__step1 li,
+ol#desc__step2 li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-size: 1.05rem;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
+
+b {
+    color: $color-main;
+    font-weight: 600;
+}
+
+.desc__step1,
+.desc__step2,
+.desc__summary,
+.desc__notes {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: $color-background;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.desc__img img {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#desc__img_text {
+    color: $color-main;
+    font-size: $font-size-15;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+@media screen and (max-width: 768px) {
+    #desc__img_text {
+        font-size: $font-size-125;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .desc__img img {
+        max-width: 80%;
+    }
+}

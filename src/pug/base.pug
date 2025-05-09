@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+
+  block main_vars
+    - var css_main = ["css/style.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" ]
+    - var js_main = ["https://code.jquery.com/jquery-3.6.4.min.js", "js/burger.js", "js/logo.js", "js/transition.js"]
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
+    title Dmytro Yelchaninov
+    meta(property="og:title", content="Dmytro Yelchaninov")
+    meta(property="og:description", content="My portfolio and blog")
+    meta(property="og:image", content="https://data-science.me/static/images/me.JPG")
+    meta(property="og:url", content="https://data-science.me")
+    meta(property="og:type", content="website")
+
+    each css in css_main || []
+      link(rel="stylesheet", href=css)
+
+  body
+  .wrapper
+    header.header
+      .container
+        .header__body
+          a.header__logo(href="game.html")
+            //- logo src defined in logo.js
+            img#logo(src="", alt="Logo")
+          .header__burger
+            span.span1
+            span.span2
+            span.span3
+          nav.header__menu
+            ul.header__list
+              li: a.header__link(href="about.html") Me
+              li
+                a.header__link(href="projects.html") Projects
+                ul.projects__list
+                  li: a.header__link(href="hot_dog.html") Hot Dog?
+                  li: a.header__link(href="lasik.html") LASIK Surgery
+                  li: a.header__link(href="gun_violence.html") Gun Violence
+                  li: a.header__link(href="house.html") Amex Housing
+                  li: a.header__link(href="everything.html") Everything
+              li: a#game_link(href="game.html") DARTs!
+              li: a.header__link(href="photo.html") Photography
+              li: a.header__link(href="contact.html") Contact
+            .header__social_mobile
+              a(href="https://linkedin.com" target="_blank")
+                i.fab.fa-linkedin
+              a(href="https://github.com" target="_blank")
+                i.fab.fa-github
+          .header__social
+            a(href="https://linkedin.com/in/dmytro-yelchaninov" target="_blank")
+              i.fab.fa-linkedin
+            a(href="https://github.com/dmytroyelchaninov" target="_blank")
+              i.fab.fa-github
+    .content
+      .container
+        main 
+          block content
+
+    each js in js_main || []
+      script(src=js)
+
+    footer.footer
+      .footer__body
+        .footer__text
+          p &copy; 2024 Yelchaninov
+          

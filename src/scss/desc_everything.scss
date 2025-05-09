@@ -1,0 +1,194 @@
+$color-hover: #909090;
+$color-main: #f4f4f4;
+
+$color-background: black;
+$color-header: #212121;
+$color4: #CC3838;
+
+$font-stack: 'Avenir', sans-serif;
+$font-stack-res: 'Didot', sans-serif;
+$font-size-base: 16px;
+$font-size-11: $font-size-base * 1.1;
+$font-size-12: $font-size-base * 1.2;
+$font-size-13: $font-size-base * 1.3;
+$font-size-14: $font-size-base * 1.4;
+$font-size-15: $font-size-base * 1.5;
+$font-size-16: $font-size-base * 1.6;
+$font-size-17: $font-size-base * 1.7;
+$font-size-18: $font-size-base * 1.8;
+$font-size-19: $font-size-base * 1.9;
+$font-size-20: $font-size-base * 2;
+$font-size-25: $font-size-base * 2.5;
+
+
+
+$header-height: 100px;
+$header-height-sm: 70px;
+
+// DESCRIPTION PART
+.desc__container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: $color-background;
+}
+
+.desc__wrapper {
+    margin-bottom: 20px;
+}
+.desc__title {
+    font-size: $font-size-20;
+    color: $color-main;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+.desc__main {
+    font-family: $font-stack;
+    font-size: $font-size-11 ;
+    line-height: 1.5;
+}
+.desc__main_text {
+    color: $color-main;
+    text-align: justify;
+}
+p {
+    text-indent: 2em;
+}
+
+#desc__header {
+}
+
+.desc__step1, .desc__step2, .desc__summary, .desc__notes, .desc__img {
+    // padding-bottom: 15px;
+    // padding-top: 15px;
+}
+
+.desc__step_title {
+    font-size: $font-size-15;
+    color: $color-main;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.desc__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#desc__img {    
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#desc__img_text {
+    font-size: $font-size-12;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+#href_to_wiki{
+    text-decoration: none;
+    color: $color4;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+        text-decoration-color: $color4;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .desc__container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+
+// .desc__title #desc__title {
+//     font-size: 2.5rem;
+//     color: $color-main;
+//     margin-bottom: 20px;
+//     text-align: center;
+// }
+
+// .desc__main_text #desc__header,
+// .desc__main_text .desc__step1,
+// .desc__main_text .desc__step2,
+// .desc__main_text .desc__summary,
+// .desc__main_text .desc__notes {
+//     margin-bottom: 15px;
+//     text-align: justify;
+//     font-size: 1.15rem;
+//     line-height: 1.8;
+// }
+
+// .desc__main_text #desc__header {
+//     font-size: 1.15rem;
+//     color: $color-main;
+//     // text-align: center;
+//     margin-bottom: 15px;
+// }
+
+// .desc__main_text .desc__step1,
+// .desc__main_text .desc__step2,
+// .desc__main_text .desc__summary,
+// .desc__main_text .desc__notes {
+//     padding: 15px;
+//     border-radius: 5px;
+//     background-color: $color-background;
+//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+// }
+
+// .desc__main_text .desc__step1 ul,
+// .desc__main_text .desc__step2 ul {
+//     padding-left: 20px;
+//     margin-bottom: 15px;
+//     font-size: 1.05rem;
+// }
+
+// .desc__main_text .desc__step1 ul li,
+// .desc__main_text .desc__step2 ul li {
+//     margin-bottom: 10px;
+// }
+
+// .desc__img img {
+//     display: block;
+//     max-width: 60%;
+//     height: auto;
+//     margin: 20px auto;
+//     border-radius: 8px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// }
+
+// .desc__img #desc__img_text {
+//     color: $color-main;
+//     font-size: $font-size-15;
+//     text-align: center;
+//     margin-top: 20px;
+//     margin-bottom: -10px;
+// }
+
+// @media screen and (max-width: 768px) {
+//     .desc__img #desc__img_text {
+//         font-size: $font-size-125;
+//         text-align: center;
+//         margin-top: 20px;
+//         margin-bottom: 0px;
+//     }
+//     .desc__img img {
+//         max-width: 80%;
+//     }
+// }

@@ -1,0 +1,54 @@
+# Node/Gulp stuff
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+
+# SCSS
+.sass-cache/
+*.css.map
+
+# Gulp generated files (customize if needed)
+gulpfile.js.map
+
+# Flask
+__pycache__/
+*.py[cod]
+instance/
+.env
+.env.*
+*.sqlite3
+
+# Flask cache or local data
+*.db
+*.pkl
+*.bak
+
+# Flask app files
+*.pyc
+*.pyo
+*.pyd
+
+# IDE/editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Python virtualenv
+venv/
+.env/
+
+# Postgres (if any dumps or config files)
+*.sql
+*.dump
+
+# Docker 
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.prod.yml
+docker-compose.dev.yml
+docker-compose.test.yml
+docker-compose.*.yml
+
