@@ -1,0 +1,17 @@
+🏨 NEW BOOKING RECEIVED 🏨
+
+Booking ID:       {{ reservation.id }}
+Guest Name:       {{ reservation.guest_name }}
+Contact Email:    {% if reservation.email %}{{ reservation.email }}{% else %}Not provided{% endif %}
+Contact Phone:    {% if reservation.phone %}{{ reservation.phone }}{% else %}Not provided{% endif %}
+
+Dates:            {{ reservation.check_in }} → {{ reservation.check_out }}
+Rooms:            {% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+Guests:           {{ reservation.number_of_guests }}
+Payment Method:   {{ payment_method }}
+Total Price:      ${{ reservation.total_price|floatformat:2 }}
+
+Additional Info:
+{{ reservation.additional_info|default:"(none)" }}
+
+— You’re receiving this because you’re the owner of Guest House Feodosia.

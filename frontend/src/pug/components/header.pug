@@ -1,0 +1,26 @@
+header.header
+  .container
+    a.header__logo(href="/")
+      img(src="/assets/logo.jpg" alt="Guest House Feodosia")
+
+    nav.header__nav
+      ul.nav__list
+        li.nav__item: a.nav__link(href="/")         The Place
+        li.nav__item: a.nav__link(href="/gallery")  Gallery
+        li.nav__item
+          a.nav__link(href="#") Reservations
+          ul.nav__submenu
+            li: a.nav__link(href="/book")   Book
+            li: a.nav__link(href="/cancel") Cancel
+        li.nav__item: a.nav__link(href="/contact") Contact Us
+
+    button.header__burger(type="button")
+      span
+      span
+      span
+
+    .header__social
+      a(href="https://instagram.com" target="_blank")
+        i.fab.fa-instagram
+      a(href="https://facebook.com" target="_blank")
+        i.fab.fa-facebook

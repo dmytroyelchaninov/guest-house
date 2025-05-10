@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: Arial, sans-serif; color: #333; }
+      .header { background: #6096ba; color: white; padding: 20px; text-align: center; }
+      .content { padding: 20px; }
+      .footer { font-size: 0.8em; color: #777; text-align: center; padding: 10px; }
+      .details { width: 100%; border-collapse: collapse; margin: 20px 0; }
+      .details td.label { font-weight: bold; text-align: right; padding-right: 10px; }
+      .details td.value { text-align: left; }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>🎉 New Booking #{{ reservation.id }} 🎉</h2>
+    </div>
+    <div class="content">
+      <p><strong>Guest:</strong> {{ reservation.guest_name }}</p>
+      <p><strong>Contact Email:</strong>
+         {% if reservation.email %}{{ reservation.email }}{% else %}<em>Not provided</em>{% endif %}</p>
+      <p><strong>Contact Phone:</strong>
+         {% if reservation.phone %}{{ reservation.phone }}{% else %}<em>Not provided</em>{% endif %}</p>
+      <table class="details">
+        <tr><td class="label">Dates:</td><td class="value">{{ reservation.check_in }} → {{ reservation.check_out }}</td></tr>
+        <tr><td class="label">Rooms:</td>
+            <td class="value">{% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td></tr>
+        <tr><td class="label">Guests:</td><td class="value">{{ reservation.number_of_guests }}</td></tr>
+        <tr><td class="label">Payment:</td><td class="value">{{ payment_method }}</td></tr>
+        <tr><td class="label">Total:</td><td class="value">{{ reservation.total_price|floatformat:2 }} RUB</td></tr>
+      </table>
+      <p><strong>Additional Info:</strong><br>
+         {{ reservation.additional_info|default:"(none)" }}
+      </p>
+    </div>
+    <div class="footer">
+      Owner notification — Guest House Feodosia
+    </div>
+  </body>
+</html>

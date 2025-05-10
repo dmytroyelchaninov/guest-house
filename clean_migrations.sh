@@ -1,4 +1,3 @@
-
 echo "Removing all migration files (except __init__.py) and __pycache__ directories..."
 
 # 1) Remove all Python migration files except __init__.py

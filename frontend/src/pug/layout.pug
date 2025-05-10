@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    //- allow pages to inject per-page variables
+    block vars
+
+    //- DEFAULTS
+    - var og       = typeof og !== 'undefined'       ? og       : {}
+    - var cssFiles = typeof cssFiles !== 'undefined' ? cssFiles : []
+    - var jsFiles  = typeof jsFiles  !== 'undefined' ? jsFiles  : []
+
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{pageTitle || 'Guest House Feodosia'}
+
+    meta(property="og:title"       content=(og.title       || pageTitle))
+    meta(property="og:description" content=(og.description || 'Hotel booking website'))
+    meta(property="og:image"       content=(og.image       || '/assets/default-og.jpg'))
+    meta(property="og:url"         content=(og.url         || '/'))
+    meta(property="og:type"        content="website")
+
+    each href in cssFiles
+      link(rel="stylesheet", href=href)
+
+  body
+    .wrapper
+      include components/header
+
+      .content
+        block content
+
+      include components/footer
+
+    each src in jsFiles
+      script(src=src)

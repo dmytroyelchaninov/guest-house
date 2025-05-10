@@ -1,0 +1,13 @@
+🚫 BOOKING CANCELLED 🚫
+
+Booking ID:       {{ reservation.id }}
+Guest Name:       {{ reservation.guest_name }}
+Dates:            {{ reservation.check_in }} → {{ reservation.check_out }}
+Rooms:            {% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+Guests:           {{ reservation.number_of_guests }}
+Payment Method:   {{ payment_method }}
+Total Price:      {{ reservation.total_price|floatformat:2 }} RUB
+
+The above booking has just been cancelled by the guest.
+
+— You’re receiving this because you’re the owner of Guest House Feodosia.

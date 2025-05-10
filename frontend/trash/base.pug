@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+
+  block main_vars
+    - var css_main = ["css/style.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" ]
+    - var js_main = ["https://code.jquery.com/jquery-3.6.4.min.js", "js/burger.js", "js/transition.js"]
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
+    title Guest House Feodosia
+    meta(property="og:title", content="Guest House Feodosia")
+    meta(property="og:description", content="Hotel booking website")
+    meta(property="og:image", content="")
+    meta(property="og:url", content="")
+    meta(property="og:type", content="website")
+
+    each css in css_main || []
+      link(rel="stylesheet", href=css)
+
+  body
+    .wrapper
+
+      header.header
+        .container
+          .header__body
+            a.header__logo(href="home.html")
+              img#logo(src="~static/assets/logo.jpg" alt="logo")
+            .header__burger
+              span.span1
+              span.span2
+              span.span3
+            nav.header__menu
+              ul.header__list
+                li: a.header__link(href="home.html") The Place
+                li: a.header__link(href="gallery.html") Gallery
+                li
+                  a.header__link(href="") Reservations
+                  ul.reservations__actions
+                    li: a.header__link(href="book.html") Book
+                    li: a.header__link(href="cancel.html") Cancel
+                li: a.header__link(href="contact.html") Contact Us
+              .header__social_mobile
+                a(href="https://instagram.com" target="_blank")
+                  i.fab.fa-instagram
+                a(href="https://facebook.com" target="_blank")
+                  i.fab.fa-facebook
+            .header__social
+              a(href="https://instagram.com" target="_blank")
+                i.fab.fa-instagram
+              a(href="https://facebook.com" target="_blank")
+                i.fab.fa-facebook
+      
+      .content
+        main 
+          block content
+
+      each js in js_main || []
+        script(src=js)
+
+      footer.footer
+        .footer__body
+          .footer__text
+            p &copy; 2025 Guest House Feodosia
+          

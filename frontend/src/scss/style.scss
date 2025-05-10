@@ -1,0 +1,236 @@
+*,
+* ::before,
+* ::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+$color-background: #000;
+$color-hover: #909090;
+$color-main: #f4f4f4;
+
+$header-height: 100px;
+$header-height-sm: 70px;
+
+/* Variables */
+$primary-color: #274c77;
+$secondary: #6096ba;
+$light: #f4f4f4;
+$text-color: #333;
+$breakpoint-md: 768px;
+
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #f7f7f7;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex: 1;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.btn {
+    display: inline-block;
+    background: $secondary;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    &:hover {
+        background: darken($secondary, 10%);
+    }
+}
+
+/* Header */
+header.header {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    /* Logo */
+    .header__logo img {
+        height: 40px;
+    }
+
+    /* Nav */
+    .header__nav {
+        @media (max-width: $breakpoint-md) {
+            display: none;
+        }
+
+        .nav__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav__submenu {
+            position: absolute;
+            background: white;
+            list-style: none;
+            padding: 0.5rem 0;
+            border: 1px solid #ddd;
+            display: none;
+        }
+
+        .nav__item:hover .nav__submenu {
+            display: block;
+        }
+    }
+
+    /* Mobile burger button */
+    .header__burger {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: $text-color;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            display: flex;
+        }
+    }
+
+    /* Social icons */
+    .header__social {
+        display: flex;
+        gap: 0.5rem;
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* Hero Carousel */
+.hero {
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        height: 60vh;
+        .carousel__slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+            &:first-child {
+                opacity: 1;
+            }
+            &__overlay {
+                position: absolute;
+                bottom: 2rem;
+                left: 2rem;
+                background: rgba(#000, 0.4);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+/* About */
+section.about {
+    text-align: center;
+    max-width: 800px;
+    margin: 3rem auto;
+    &__heading {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__text {
+        line-height: 1.6;
+    }
+}
+
+/* Amenities */
+section.amenities {
+    max-width: 1000px;
+    margin: 3rem auto;
+    &__heading {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+    i {
+        color: $secondary;
+    }
+}
+
+/* Footer */
+footer.footer {
+    background: $light;
+    padding: 1rem 0;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    p {
+        margin: 0;
+    }
+    &__social {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 0.5rem;
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}

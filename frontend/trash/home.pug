@@ -1,0 +1,19 @@
+extends base.pug
+
+//- This adds extra styles and js to already defined in base.pug
+append main_vars
+  - css_main.push.apply(css_main, [""])
+  - js_main.push.apply(js_main, [""])
+  
+block content
+  .main__page
+    .main__page__body
+      .main__page__title
+        h1.main__page__title__text The Place
+      .main__page__content
+        .main__page__content__text
+          p.main__page__content__text__item Welcome to our guest house in Feodosia, where comfort meets hospitality. Our cozy rooms are designed for your relaxation and enjoyment. We offer a range of amenities to make your stay unforgettable. Whether you're here for a romantic getaway or a family vacation, we have something for everyone.
+        .main__page__content__img
+          img(src="~static/assets/room.jpg" alt="Room Image")
+        .main__page__content__text
+          p.main__page__content__text__item Our guest house is located in the heart of Feodosia, just a short walk from the beach and local attractions. Enjoy the beautiful views and explore the rich history of this charming town. Our friendly staff is here to assist you with anything you need during your stay.

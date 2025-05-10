@@ -1,0 +1,20 @@
+Hi {{ reservation.guest_name }},
+
+Welcome to Guest House Feodosia!
+
+Booking ID:       {{ reservation.id }}
+Dates:            {{ reservation.check_in }} → {{ reservation.check_out }}
+Rooms:            {% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+Number of Guests: {{ reservation.number_of_guests }}
+Payment Method:   {{ payment_method }}
+Total Price:      ${{ reservation.total_price|floatformat:2 }}
+
+Contact Email:    {% if reservation.email %}{{ reservation.email }}{% else %}Not provided{% endif %}
+Contact Phone:    {% if reservation.phone %}{{ reservation.phone }}{% else %}Not provided{% endif %}
+
+Additional Notes:
+{{ reservation.additional_info|default:"(none)" }}
+
+We can’t wait to welcome you!
+
+— The Guest House Feodosia Team

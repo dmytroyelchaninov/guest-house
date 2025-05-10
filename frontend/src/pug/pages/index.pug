@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block vars
+  - var pageTitle = 'Welcome to Guest House Feodosia'
+  - var og = { title: pageTitle, description: 'Discover our cozy rooms by the sea', image: '/assets/og-home.jpg', url: '/' }
+  - var cssFiles = ['/css/style.css', 'https://cdnjs.cloudflare.com/.../font-awesome.min.css']
+  - var jsFiles  = ['https://code.jquery.com/jquery-3.6.4.min.js', '/js/burger.js', '/js/transition.js']
+
+
+block content
+  section.hero
+    h1 Welcome to Guest House Feodosia
+    p “Your home by the Black Sea.”

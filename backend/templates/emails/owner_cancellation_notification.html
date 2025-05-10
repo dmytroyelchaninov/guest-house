@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; }
+    .header { background: #6096ba; color: white; padding: 20px; text-align: center; }
+    .content { padding: 20px; }
+    .details { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    .details td.label { font-weight: bold; width: 150px; }
+    .footer { font-size: 0.8em; color: #777; text-align: center; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>🚫 Booking #{{ reservation.id }} Cancelled</h2>
+  </div>
+  <div class="content">
+    <p><strong>Guest:</strong> {{ reservation.guest_name }}</p>
+    <table class="details">
+      <tr><td class="label">Dates:</td><td>{{ reservation.check_in }} → {{ reservation.check_out }}</td></tr>
+      <tr><td class="label">Rooms:</td>
+          <td>{% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td></tr>
+      <tr><td class="label">Guests:</td><td>{{ reservation.number_of_guests }}</td></tr>
+      <tr><td class="label">Payment:</td><td>{{ payment_method }}</td></tr>
+      <tr><td class="label">Total:</td><td>{{ reservation.total_price|floatformat:2 }} RUB</td></tr>
+    </table>
+    <p>This booking has been cancelled by the guest.</p>
+  </div>
+  <div class="footer">
+    Owner notification — Guest House Feodosia
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Hi {{ reservation.guest_name }},
+
+We’re sorry to see you cancel your stay at Guest House Feodosia.
+
+Booking ID:       {{ reservation.id }}
+Dates:            {{ reservation.check_in }} → {{ reservation.check_out }}
+Rooms:            {% for room in reservation.rooms.all %}{{ room.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+Guests:           {{ reservation.number_of_guests }}
+Payment Method:   {{ payment_method }}
+Total Price:      {{ reservation.total_price|floatformat:2 }} RUB
+
+If this was a mistake or you’d like to rebook, please visit our site or contact us.
+
+— The Guest House Feodosia Team
